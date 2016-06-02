@@ -1,0 +1,58 @@
+<form action="<{$smarty.server.php_self}>?op=edit&start=<{$start}>&num=<{$num}>" method="post">
+<h1><{$smarty.const._AM_PINGTRAX_PING_EDIT_H1}></h1>
+<div>
+	<div style="float:left; clear:none; width: auto; margin-left: 30px;">
+		<{$pagenav}>
+	</div>
+	<div style="float:right; width: auto; margin-right: 30px;">
+		<input type="submit" value="<{$smarty.const._SUBMIT}>" name="submit" />
+	</div>
+</div>
+<table>
+	<thead>
+		<tr class="head">
+			<td><{$smarty.const._AM_PINGTRAX_PING_ID}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_TYPE}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_URI}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_LAST}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_SUCCESSES}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_FAILURES}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_SUCCESS}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_FAILED}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_SLEEPTILL}></td>
+			<td><{$smarty.const._AM_PINGTRAX_PING_ACTIONS}></td>
+		</tr>
+	</thead>
+	<tbody>
+	<{foreach item=ping from=$pings}>
+		<tr class="<{cycle value="even,odd"}>">
+			<td style="text-align:center;"><{$ping.id}></td>
+			<td style="text-align:center;"><select name="type[<{$ping.id}>]" ><option value="XML-RPC"<{if $ping.type=="XML-RPC"}> selected="selected"<{/if}>>XML-RPC</option><option value="SITEMAPS"<{if $ping.type=="SITEMAPS"}> selected="selected"<{/if}>>SITEMAPS</option></select></td>
+			<td style="text-align:center;"><input type="text" size="52" value="<{$ping.uri}>" name="uri[<{$ping.id}>]" maxlength="250" /></td>
+			<td style="text-align:center;"><{if isset($ping.last.uri) && !empty($ping.last.title) }><a href="<{$ping.last.uri}>" target="_blank"><{$ping.last.title}></a><{else}>&nbsp;<{/if}></td>
+			<td style="text-align:center;"><{$ping.successes}></td>
+			<td style="text-align:center;"><{$ping.failures}></td>
+			<td style="text-align:center;"><{$ping.success}></td>
+			<td style="text-align:center;"><{$ping.failed}></td>
+			<td style="text-align:center;"><{$ping.sleeptill}></td>
+			<td style="text-align:center;"><a href="<{$smarty.server.php_self}>?op=delete&id=<{$ping.id}>&start=<{$start}>&num=<{$num}>" title="<{$smarty.const._AM_PINGTRAX_PING_DELETE}>"><img alt="<{$smarty.const._AM_PINGTRAX_PING_DELETE_ALT}>" src="<{$xoops_url}>/modules/pingtrax/images/delete.png" /></a></td>
+		</tr>	
+	<{/foreach}>
+	</tbody>
+</table>
+<div>
+	<div style="float:left; clear:none; width: auto; margin-left: 30px;">
+		<input type="submit" value="<{$smarty.const._SUBMIT}>" name="submit" />
+	</div>
+	<div style="float:right; width: auto; margin-right: 30px;">
+		<{$pagenav}>
+	</div>
+</div>
+</form>
+<br/>
+<br/>
+<br/>
+<hr/>
+<h1><{$smarty.const._AM_PINGTRAX_PING_ADD_H1}></h1>
+<p><{$smarty.const._AM_PINGTRAX_PING_ADD_P}></p>
+<{$addform}>

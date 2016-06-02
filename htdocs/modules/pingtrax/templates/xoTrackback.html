@@ -1,0 +1,20 @@
+<table id="trackbacks" width="100%">
+	<thead>
+		<tr class="head">
+			<td><img src="<{$xoops_url}>/modules/pingtrax/images/link.png" width="32px" height="32px"/></td>
+			<td class="permlink"><{$permlink}></td>
+		</tr>
+	</thead>
+	<{if count($trackbacks)>0 }>
+	<tbody>
+	<{foreach item=trackback from=$trackbacks}>
+		<tr class=<{cycle values="odd,even"}>>
+			<td colspan="2" class="itemTitle"><{$trackback.subject}></td>
+		</tr>
+		<tr class=<{cycle values="odd,even"}>>
+			<td colspan="2" class="itemContent"><{$trackback.comment}></td>
+		</tr>
+	<{/foreach>
+	</tbody>
+	<{/if}>
+</table>

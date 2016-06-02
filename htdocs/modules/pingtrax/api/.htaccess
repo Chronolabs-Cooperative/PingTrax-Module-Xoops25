@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([0-9a-z]{32,44})$ 		index.php?referer=$1		[L]

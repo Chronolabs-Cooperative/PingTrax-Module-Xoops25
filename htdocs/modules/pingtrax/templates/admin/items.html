@@ -1,0 +1,75 @@
+<div>
+	<div style="float:left; clear:none; width: auto; margin-left: 30px;">
+		<{$pagenav}>
+	</div>
+	<div style="float:right; width: auto; margin-right: 30px;">
+		<label for="filter-items" style="font-size: 188%; font-weight: 600;"><{$smarty.const._AM_PINGTRAX_ITEMS_FILTER}></label>
+		<select id="filter-items" style="font-size: 188%; font-weight: 900;">
+		    <option value="<{$phpself}>?start=0&num=<{$num}>&protocol=&domain="<{if $protocol == '' && $domain == ''}> selected<{/if}>><{$smarty.const._AM_PINGTRAX_ITEMS_FILTER_NONE}></option>
+		    <{foreach item=item from=$filter}>
+		    <option value="<{$phpself}>?start=0&num=<{$num}>&protocol=<{$item.protocol}>&domain=<{$item.domain}>"<{if $protocol == $item.protocol && $domain == $item.domain}> selected<{/if}>><{$item.filename}></option>
+		    <{/foreach}>
+		</select>
+	</div>
+</div>
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#filter-items').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+</script>
+<h1><{$smarty.const._AM_PINGTRAX_ITEMS_H1}></h1>
+<table>
+	<thead>
+		<tr class="head">
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_ID}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_MODULE_DIRNAME}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_MODULE_CLASS}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_ITEM_ID}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_CAT_ID}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_AUTHOR}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_TITLE}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_REFERERURI}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_DISCOVERY}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_SESSIONING}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_CHILDREN}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_FREQUENCY}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_PRIORITY}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_CHECKING}></td>
+			<td><{$smarty.const._AM_PINGTRAX_ITEMS_CHANGED}></td>
+		</tr>
+	</thead>
+	<tbody>
+	<{foreach item=item from=$locals}>
+		<tr class="<{cycle value="even,odd"}>">
+			<td style="text-align:center;"><{$item.id}></td>
+			<td style="text-align:center;"><{$item.dirname}></td>
+			<td style="text-align:center;"><{$item.class}></td>
+			<td style="text-align:center;"><{$item.itemid}></td>
+			<td style="text-align:center;"><{$item.catid}></td>
+			<td style="text-align:center;"><{if $item.author.uid}><a href="<{$xoops_url}>/userinfo.php?uid=<{$item.author.uid}>" target="_blank"><{/if}><{$item.author.name}><{if $item.author.uid}></a><{/if}></td>
+			<td style="text-align:center;"><a href="<{$item.uri}>" target="_blank"><{$item.title}></a></td>
+			<td style="text-align:center;"><a href="<{$item.uri}>" target="_blank"><{$item.refereruri}></a></td>
+			<td style="text-align:center;"><{$item.discovery}></td>
+			<td style="text-align:center;"><{$item.session}></td>
+			<td style="text-align:center;"><{$item.children}></td>
+			<td style="text-align:center;"><{$item.frequency}></td>
+			<td style="text-align:center;"><{$item.priority}></td>
+			<td style="text-align:center;"><{$item.checking}></td>
+			<td style="text-align:center;"><{$item.changed}></td>
+		</tr>	
+	<{/foreach}>
+	</tbody>
+</table>
+<div>
+	<div style="float:right; width: auto; margin-right: 30px;">
+		<{$pagenav}>
+	</div>
+</div>

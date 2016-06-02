@@ -1,0 +1,30 @@
+[center][img width=200]http://au.syd.labs.coop/images/200x200.png[/img]
+[size=xx-large]Chronolabs Cooperative[/size]
+
+[size=large]... Presents ...[/size]
+
+[size=x-large]PingTrax 1.01[/size]
+[/center]
+
+[size=large][b][u]Introduction[/u][/b][/size]
+
+[size=medium]PingTrax 1.01 is a module that uses auto discovery to generate links to send to PingLists as well as allow for Permalink's for trackbacks on all your public site! It has a plugin's system if you want to use it to customise your module input's into PingTrax but this isn't required to operate on the system.
+
+There is a smarty function which output a table for the permalink which is [font=Courier][b]<{xoTrackbacks}>[/b][/font] or [font=Courier][b]<{xoTrackbacks dirname=$xoops_dirname}>[/b][/font] this will output when you put it in your theme the permalink as well as any trackbacks that have been linked to the site.
+
+It utilises preloader events to maintain the pinglists as well as trackbacks; but it also generates your sitemaps as well in xml in the root and alters the robots.txt to reflect the sitemaps. This is all through auto discovery so there is very little you have to do to use this module in base mode. There is also in the the include folder 3 text files which are used in order to specify root names for Id's and identity tags in the $_GET path of the URL in case you need to do some basic customisation without having any knowledge of how to write a plugin's class.
+
+I have attempted too make this module fluid and dynamic so it is easy to implement! It will list your site on the web quickly and effectively, so please download and install it is for XOOPS 2.5 or later.[/size]
+
+[size=large][b][u]Downloads[/u][/b][/size]
+[size=x-large]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.7z/download]xoops2.5_pingtrax_1.01.7z - 41.2k[/url]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.tar.bz2/download]xoops2.5_pingtrax_1.01.tar.bz2 - 44.6k[/url]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.zip/download]xoops2.5_pingtrax_1.01.zip - 69.3k[/url]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.tar.gz/download]xoops2.5_pingtrax_1.01.tar.gz - 51.1k[/url]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.zoo/download]xoops2.5_pingtrax_1.01.zoo - 98.1k[/url]
+ ** [url=http://sourceforge.net/projects/chronolabs/files/XOOPS%202.5/Modules/pingtrax/xoops2.5_pingtrax_1.01.rar/download]xoops2.5_pingtrax_1.01.rar - 68.1k[/url][/size]
+
+[size=large][b][u]Bug Reports[/u][/b][/size]
+
+[size=medium]This is being released for testing purposes, the actual release will be in the news as version 1.02. If you have a bug please use the following form and report it:- https://sourceforge.net/p/chronolabs/tickets/new/[/size]
