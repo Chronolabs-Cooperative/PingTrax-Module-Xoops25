@@ -45,7 +45,7 @@ foreach($sitemapsHandler->getObjects($criteria) as $id => $sitemap)
 	
 $criteria = new CriteriaCompo(new Criteria('`offlined`', 0));
 if (!empty($protocol))
-	$criteria->add(new Criteria('`item-protocol`', mysql_escape_string($protocol)));
+	$criteria->add(new Criteria('`item-protocol`', mysqli_escape_string($protocol)));
 if (!empty($domain))
 	$criteria->add(new Criteria('`item-domain`', $domain));
 $criteria->add(new Criteria('`type`', 'local'));

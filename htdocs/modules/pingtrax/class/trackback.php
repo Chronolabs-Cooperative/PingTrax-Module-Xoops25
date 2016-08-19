@@ -294,7 +294,7 @@ class PingtraxTrackback {
             $author = $this->author;
         } 
 
-        $return = "<!-- \n";
+        $return = "\n\n<!--\n";
         $return .= "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" \n";
         $return .= "\txmlns:dc=\"http://purl.org/dc/elements/1.1/\" \n";
         $return .= "\txmlns:trackback=\"http://madskills.com/public/xml/rss/module/trackback/\"> \n";
@@ -308,7 +308,7 @@ class PingtraxTrackback {
         $return .= "\tdc:creator=\"" . $this->xml_safe($author) . "\" \n";
         $return .= "\tdc:date=\"" . $RFC822_date . "\" /> \n";
         $return .= "</rdf:RDF> \n";
-        $return .= "-->  \n";
+        $return .= "-->\n";
 
         return $return;
     } 

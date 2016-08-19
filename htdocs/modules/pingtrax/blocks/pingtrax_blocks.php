@@ -31,3 +31,14 @@ function pingtrax_trackbacks_block_edit($args = array())
 {
 
 }
+
+function pingtrax_trackurl_block_show($args = array())
+{
+	return array('url'=>XOOPS_URL . $_SERVER["REQUEST_URI"]);
+}
+
+
+function pingtrax_trackurl_block_edit($args = array())
+{
+
+}

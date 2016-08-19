@@ -128,3 +128,14 @@ $modversion["blocks"][1]    = array(
 		"template"        => "trackbacks_block.html",
 );
 
+
+$modversion["blocks"][2]    = array(
+		"file"            => "pingtrax_blocks.php",
+		"name"            => "Trackbacks URL",
+		"description"     => "Show's Trackback URL",
+		"show_func"       => "pingtrax_trackurl_block_show",
+		"edit_func"       => "pingtrax_trackurl_block_edit",
+		"options"         => "",
+		"template"        => "trackbacks_url.html",
+);
+
