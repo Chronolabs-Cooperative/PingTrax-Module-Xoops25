@@ -29,7 +29,7 @@ CREATE TABLE `pingtrax_items` (
   PRIMARY KEY (`id`),
   KEY `SEARCH` (`referer`,`item-author-uid`,`item-author-name`,`module-dirname`,`item-protocol`,`item-domain`,`item-referer-uri`,`module-php-self`,`item-php-self`,`discovery-hook`,`id`) KEY_BLOCK_SIZE=128,
   KEY `CHRONOLOGISTICS` (`id`,`referer`,`created`,`updated`,`offlined`) USING BTREE KEY_BLOCK_SIZE=64
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC KEY_BLOCK_SIZE=16;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `pingtrax_items_pings` (
@@ -40,7 +40,7 @@ CREATE TABLE `pingtrax_items_pings` (
   PRIMARY KEY (`id`),
   KEY `SEARCH` (`id`,`ping-referer`,`item-referer`) USING BTREE,
   KEY `CHRONOLOGISTICS` (`ping-referer`,`item-referer`,`when`) USING BTREE KEY_BLOCK_SIZE=64
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC KEY_BLOCK_SIZE=8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pingtrax_items_sitemaps` (
   `id` mediumint(32) NOT NULL AUTO_INCREMENT,
@@ -87,7 +87,7 @@ CREATE TABLE `pingtrax_items_sitemaps` (
   PRIMARY KEY (`id`),
   KEY `SEARCH` (`id`,`map-referer`,`item-referer`) USING BTREE,
   KEY `CHRONOLOGISTICS` (`map-referer`,`item-referer`) USING BTREE KEY_BLOCK_SIZE=64
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC KEY_BLOCK_SIZE=8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pingtrax_pings` (
   `id` int(14) NOT NULL AUTO_INCREMENT,
@@ -106,7 +106,7 @@ CREATE TABLE `pingtrax_pings` (
   PRIMARY KEY (`id`,`referer`,`type`,`uri`),
   KEY `SEARCH` (`referer`,`type`,`uri`,`last-item-referer`,`successful-pings`,`failed-pings`,`id`) USING BTREE,
   KEY `CHRONOLOGISTICS` (`id`,`referer`,`created`,`updated`,`offlined`,`failure-time`,`success-time`,`sleep-till`) USING BTREE KEY_BLOCK_SIZE=128
-) ENGINE=InnoDB AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC KEY_BLOCK_SIZE=16;
+) ENGINE=InnoDB AUTO_INCREMENT=1024 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `pingtrax_sitemaps` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -129,5 +129,5 @@ CREATE TABLE `pingtrax_sitemaps` (
   PRIMARY KEY (`id`),
   KEY `SEARCH` (`id`,`referer`,`protocol`,`filename`,`domain`,`baseurl`) USING BTREE,
   KEY `CHRONOLOGISTICS` (`id`,`written`,`created`,`updated`,`offlined`,`referer`) USING BTREE KEY_BLOCK_SIZE=64
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=1 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC KEY_BLOCK_SIZE=16;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
