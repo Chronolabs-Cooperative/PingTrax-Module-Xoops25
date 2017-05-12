@@ -23,7 +23,7 @@
 
 $modversion                   = array();
 $modversion['name']           = _MI_PINGTRAX_NAME;
-$modversion['version']        = 1.04;
+$modversion['version']        = 2.01;
 $modversion['description']    = _MI_PINGTRAX_DESC;
 $modversion['author']         = "Simon Antony Roberts";
 $modversion['credits']        = "Chronolabs";
@@ -38,8 +38,8 @@ $modversion['icons32']        = '../../Frameworks/moduleclasses/icons/32';
 
 //about
 $modversion["module_status"]       = "Stable";
-$modversion['release_date']        = '2015/12/09';
-$modversion["module_website_url"]  = "http://labs.coop/";
+$modversion['release_date']        = '2017/04/17';
+$modversion["module_website_url"]  = "http://snails.email";
 $modversion["module_website_name"] = "Chronolabs";
 $modversion['min_php']             = '5.3.7';
 $modversion['min_xoops']           = "2.5.7";

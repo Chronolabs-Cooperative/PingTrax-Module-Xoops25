@@ -339,7 +339,7 @@ class PingtraxPlugins extends XoopsObject
 	 */
 	function getFeedProtocol()
 	{
-		return parse_url(strtolower(str_replace("%xoops_url%", XOOPS_URL, $this->_configs['default_feed_url'])), PHP_URL_SCHEME);
+		return strtolower(XOOPS_PROT);
 	}
 	
 	/**

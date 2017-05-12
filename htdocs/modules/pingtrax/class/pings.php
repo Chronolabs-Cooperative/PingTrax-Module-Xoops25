@@ -202,7 +202,7 @@ class PingtraxPingsHandler extends XoopsPersistableObjectHandler
     			$item = $itemsHandler->getByReferer($itemping->getVar('item-referer'));
     			if (is_a($item, "PingtraxItems"))
     			{
-    				$context = stream_context_create(array('http' => array(
+    				$context = stream_context_create(array('http://' => array(
     						'method' => "POST",
     						'header' => "Content-Type: text/xml\r\n",
     						'content' => $item->getPingXML()
