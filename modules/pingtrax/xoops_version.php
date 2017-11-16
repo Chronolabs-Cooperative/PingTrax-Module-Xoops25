@@ -23,7 +23,7 @@
 
 $modversion                   = array();
 $modversion['name']           = _MI_PINGTRAX_NAME;
-$modversion['version']        = 2.01;
+$modversion['version']        = 2.07;
 $modversion['description']    = _MI_PINGTRAX_DESC;
 $modversion['author']         = "Simon Antony Roberts";
 $modversion['credits']        = "Chronolabs";

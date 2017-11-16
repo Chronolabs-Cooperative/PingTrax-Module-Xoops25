@@ -1,4 +1,4 @@
-# Pingtrax 2.01 ~ Pinging + Trackbacks + Sitemaps
+# Pingtrax 2.07 ~ Pinging + Trackbacks + Sitemaps
 ## for XOOPS 2.5 ~ http://xoops.org
 ### (PHP Framework Example)
 ### Author: Simon Antony Roberts (AU) <simon@snails.email>
